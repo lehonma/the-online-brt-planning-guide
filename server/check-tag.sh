@@ -4,6 +4,7 @@ minor=0
 echo ENV VAR IS_PR = $IS_PR
 echo ENV VAR IsPullRequest = $IsPullRequest
 echo ENV VAR PULL_REQUEST = $PULL_REQUEST
+echo TAGS => $(git tag)
 
 #Checks if $0 is greater than cur major/minor
 function compare_versions()

@@ -3,6 +3,7 @@ minor=0
 
 echo ENV VAR IS_PR = $IS_PR
 echo ENV VAR IsPullRequest = $IsPullRequest
+echo ENV VAR PULL_REQUEST = $PULL_REQUEST
 
 #Checks if $0 is greater than cur major/minor
 function compare_versions()
@@ -22,7 +23,7 @@ function compare_versions()
 	return 0	
 }
 
-if [[ $IsPullRequest -eq "0" ]] 
+if [[ $PULL_REQUEST = "" ]] 
 	then for t in $(git tag --list 'v*.*') 
 	do 
 	if [[ "$t" =~ ^[v\d+\.\d+]  ]]
@@ -31,9 +32,9 @@ if [[ $IsPullRequest -eq "0" ]]
 	done
 fi
 
-if [[ major > 0 || minor > 0 ]]
-	then export TAG=v$major.$minor
+if [[ major -gt 0 ]] || [[ minor -gt 0 ]]
+	then TAG=v$major.$minor
 else
-	then export TAG=""
+	TAG=""
 fi
-echo $TAG
+export TAG=$TAG

@@ -53,7 +53,7 @@
 			"unset DEBUG",
 
 			"source server/check-tag.sh",
-
+			"echo $TAG",
 			"cd $ROBRT_REPOSITORY_DIR/server/cover",
 			"hmm install",
 			"haxelib list",

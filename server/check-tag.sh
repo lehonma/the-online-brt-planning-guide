@@ -1,6 +1,9 @@
 major=0 
 minor=0
 
+echo ENV VAR IS_PR = $IS_PR
+echo ENV VAR IsPullRequest = $IsPullRequest
+
 #Checks if $0 is greater than cur major/minor
 function compare_versions()
 {	
@@ -28,5 +31,9 @@ if [[ $IsPullRequest -eq "0" ]]
 	done
 fi
 
-export TAG=v$major.$minor
+if [[ major > 0 || minor > 0 ]]
+	then export TAG=v$major.$minor
+else
+	then export TAG=""
+fi
 echo $TAG

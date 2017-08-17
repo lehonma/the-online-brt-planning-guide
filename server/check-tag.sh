@@ -24,7 +24,7 @@ function compare_versions()
 	return 0	
 }
 
-if [[ $PULL_REQUEST = "" ]] 
+if [[ $PULL_REQUEST == "" ]] 
 	then for t in $(git tag --list 'v*.*') 
 	do 
 	echo HERE!

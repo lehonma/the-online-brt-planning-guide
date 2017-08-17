@@ -27,6 +27,7 @@ function compare_versions()
 if [[ $PULL_REQUEST = "" ]] 
 	then for t in $(git tag --list 'v*.*') 
 	do 
+	echo HERE!
 	if [[ "$t" =~ ^[v\d+\.\d+]  ]]
 		then compare_versions $t
 	fi

@@ -1,9 +1,8 @@
 major=0 
 minor=0
 
-echo ENV VAR IS_PR = $IS_PR
-echo ENV VAR IsPullRequest = $IsPullRequest
-echo ENV VAR PULL_REQUEST = $PULL_REQUEST
+echo ENV VAR IsPullRequest = $ROBRT_IS_PR
+echo env var BASE BRANCH = $BASE_BRANCH
 echo TAGS = $(git tag --list 'v*.*')
 
 #Checks if $0 is greater than cur major/minor
@@ -25,7 +24,7 @@ function compare_versions()
 }
 
 #null string or 0
-if [[ ${#PULL_REQUEST} -eq 0 ]] || [[ $PULL_REQUEST -eq 0 ]]
+if [[ ${#ROBRT_IS_PR} -eq 0 ]] || [[ $ROBRT_IS_PR -eq 0 ]]
 	then for t in $(git tag --list 'v*.*') 
 	do 
 	echo HERE!

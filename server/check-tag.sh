@@ -38,3 +38,4 @@ else
 	TAG=""
 fi
 export TAG=$TAG
+echo $TAG

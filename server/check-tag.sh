@@ -1,10 +1,6 @@
 major=0 
 minor=0
 
-echo ENV VAR IsPullRequest = $ROBRT_IS_PR
-echo env var BASE BRANCH = $BASE_BRANCH
-echo TAGS = $(git tag --list 'v*.*')
-
 #Checks if $0 is greater than cur major/minor
 function compare_versions()
 {	
@@ -40,4 +36,3 @@ else
 	TAG=""
 fi
 export TAG=$TAG
-echo $TAG
